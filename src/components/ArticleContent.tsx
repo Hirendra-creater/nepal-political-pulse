@@ -9,6 +9,15 @@ const ArticleContent = () => {
         राजनीति: राष्ट्र विकासको मेरुदण्ड
       </h1>
       
+      <div className="mb-8 overflow-hidden rounded-lg shadow-md">
+        <img 
+          src="https://images.unsplash.com/photo-1619472351888-f844a0b33f5b?q=80&w=1200&auto=format&fit=crop"
+          alt="नेपाली संसद भवन - Nepali Parliament Building" 
+          className="w-full h-auto object-cover"
+        />
+        <p className="text-sm text-gray-600 italic mt-2 text-right">श्रोत: अन्सप्लास, नेपाली संसद भवन</p>
+      </div>
+      
       <section className="mb-8">
         <h2 className="text-2xl font-bold mb-4 text-nepal-blue">भूमिका</h2>
         <p className="mb-4">
@@ -27,14 +36,23 @@ const ArticleContent = () => {
         </p>
       </section>
       
-      <section className="mb-8 bg-gray-50 p-6 rounded-lg border-l-4 border-nepal-blue">
-        <h2 className="text-2xl font-bold mb-4 text-nepal-blue">दलहरूबीचको प्रतिस्पर्धा</h2>
-        <p className="mb-4">
-          नेपालमा बहुदलीय प्रणाली छ जसले विभिन्न राजनीतिक दलहरूलाई प्रतिस्पर्धा गर्ने अवसर प्रदान गरेको छ। 
-          यद्यपि, धेरैजसो अवस्थामा दलहरूको प्राथमिकता सत्ता प्राप्तिमा केन्द्रित देखिन्छ। 
-          जनताको समस्या समाधानभन्दा पनि पद र शक्तिको खेलले राजनीति बदनाम बनाएको छ।
-        </p>
-      </section>
+      <div className="mb-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="overflow-hidden rounded-lg shadow-md">
+          <img 
+            src="https://images.unsplash.com/photo-1593350787438-394184d2e82c?q=80&w=800&auto=format&fit=crop"
+            alt="नेपाली झण्डा - Nepali Flag" 
+            className="w-full h-64 object-cover"
+          />
+        </div>
+        <div className="bg-gray-50 p-6 rounded-lg border-l-4 border-nepal-blue flex flex-col justify-center">
+          <h2 className="text-2xl font-bold mb-4 text-nepal-blue">दलहरूबीचको प्रतिस्पर्धा</h2>
+          <p>
+            नेपालमा बहुदलीय प्रणाली छ जसले विभिन्न राजनीतिक दलहरूलाई प्रतिस्पर्धा गर्ने अवसर प्रदान गरेको छ। 
+            यद्यपि, धेरैजसो अवस्थामा दलहरूको प्राथमिकता सत्ता प्राप्तिमा केन्द्रित देखिन्छ। 
+            जनताको समस्या समाधानभन्दा पनि पद र शक्तिको खेलले राजनीति बदनाम बनाएको छ।
+          </p>
+        </div>
+      </div>
       
       <section className="mb-8">
         <h2 className="text-2xl font-bold mb-4 text-nepal-blue">जनताको भूमिका र सचेतना</h2>
