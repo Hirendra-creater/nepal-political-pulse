@@ -6,8 +6,62 @@ import ArticleContent from '@/components/ArticleContent';
 import DailyUpdates from '@/components/DailyUpdates';
 import '../styles/custom.css';
 
+// Function to convert date to Nepali format
+const getFormattedNepaliDate = () => {
+  const currentDate = new Date();
+  
+  // Map for Nepali months
+  const nepaliMonths = {
+    '1': 'बैशाख',
+    '2': 'जेठ',
+    '3': 'असार',
+    '4': 'श्रावण',
+    '5': 'भदौ',
+    '6': 'आश्विन',
+    '7': 'कार्तिक',
+    '8': 'मंसिर',
+    '9': 'पुष',
+    '10': 'माघ',
+    '11': 'फाल्गुन',
+    '12': 'चैत्र'
+  };
+
+  // Map for Nepali numerals
+  const nepaliNumerals = {
+    '0': '०',
+    '1': '१',
+    '2': '२',
+    '3': '३',
+    '4': '४',
+    '5': '५',
+    '6': '६',
+    '7': '७',
+    '8': '८',
+    '9': '९'
+  };
+  
+  // Convert to Nepali year (add 56 years and 8 months approximately)
+  const nepaliYear = currentDate.getFullYear() + 57;
+  
+  // Get current month (1-12)
+  const month = currentDate.getMonth() + 1;
+  
+  // Get current day
+  const day = currentDate.getDate();
+  
+  // Convert numbers to Nepali numerals
+  const nepaliYearStr = nepaliYear.toString().split('').map(digit => nepaliNumerals[digit] || digit).join('');
+  const nepaliDay = day.toString().split('').map(digit => nepaliNumerals[digit] || digit).join('');
+  
+  // Get Nepali month name
+  const nepaliMonth = nepaliMonths[month.toString()] || '';
+  
+  return `${nepaliYearStr} ${nepaliMonth} ${nepaliDay}`;
+};
+
 const Index = () => {
-  // Get current date in Nepali format
+  // Get current date in both Nepali and English format
+  const nepaliDate = getFormattedNepaliDate();
   const currentDate = new Date();
   const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
   const englishDate = currentDate.toLocaleDateString('en-US', options);
@@ -21,7 +75,7 @@ const Index = () => {
           <div className="lg:col-span-2">
             <div className="mb-6 p-4 bg-nepal-light border-l-4 border-nepal-red rounded-md">
               <p className="text-nepal-dark text-sm">
-                प्रकाशित मिति: २०८२ जेठ ०० ({englishDate})| श्रेणी: विश्लेषण
+                प्रकाशित मिति: {nepaliDate} ({englishDate}) | श्रेणी: विश्लेषण
               </p>
             </div>
             
