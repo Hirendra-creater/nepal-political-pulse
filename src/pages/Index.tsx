@@ -7,6 +7,11 @@ import DailyUpdates from '@/components/DailyUpdates';
 import '../styles/custom.css';
 
 const Index = () => {
+  // Get current date in Nepali format
+  const currentDate = new Date();
+  const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+  const englishDate = currentDate.toLocaleDateString('en-US', options);
+  
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <Header />
@@ -16,7 +21,7 @@ const Index = () => {
           <div className="lg:col-span-2">
             <div className="mb-6 p-4 bg-nepal-light border-l-4 border-nepal-red rounded-md">
               <p className="text-nepal-dark text-sm">
-                प्रकाशित मिति: २०८१ चैत्र २४ (April 6, 2025) | श्रेणी: विश्लेषण
+                प्रकाशित मिति: २०८२ जेठ ०० ({englishDate})| श्रेणी: विश्लेषण
               </p>
             </div>
             
