@@ -1,0 +1,112 @@
+
+/* Custom CSS for Nepal Political Pulse */
+
+/* Global styles */
+body {
+  background-color: #f9f9f9;
+}
+
+/* Header enhancement */
+.nepal-header {
+  border-bottom: 3px solid var(--nepal-red);
+  background: linear-gradient(to right, #fff, #f8f8f8);
+}
+
+/* Article styling */
+.article-content h1 {
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: #1A1A1A;
+}
+
+.article-content h2 {
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.article-content h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 60px;
+  background-color: var(--nepal-red);
+}
+
+.article-content p {
+  line-height: 1.8;
+}
+
+/* Card hover effects */
+.nepal-card {
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent;
+}
+
+.nepal-card:hover {
+  border-left: 3px solid var(--nepal-red);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Image captions */
+.image-caption {
+  font-style: italic;
+  color: #666;
+  font-size: 0.875rem;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+/* Special quote styles */
+.nepal-quote {
+  font-style: italic;
+  padding-left: 1rem;
+  border-left: 4px solid var(--nepal-red);
+  color: #4a4a4a;
+}
+
+/* Badge styles */
+.nepal-badge {
+  background-color: var(--nepal-red);
+  color: white;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+}
+
+/* Link styles */
+.nepal-link {
+  color: var(--nepal-blue);
+  text-decoration: none;
+  position: relative;
+}
+
+.nepal-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--nepal-blue);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.nepal-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
